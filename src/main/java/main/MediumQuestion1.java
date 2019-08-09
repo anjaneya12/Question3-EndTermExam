@@ -31,9 +31,14 @@ class SeniorCitizenCustomer extends Customer {
 	}
 	
 	Double getBillAmount(Double amount) {
-		Double bill =null; //edit as per the question
-		//Write your code here of required
+		Double bill =null; 
+		
+		System.out.print("Your bill amount is Rs." +amount);
+		double bal=0.12*amount;
+		bill=amount-bal;
+		System.out.println(bill);
 		return bill;
+		
 	}
 
 }
@@ -45,6 +50,9 @@ class PrivilegeCustomer extends Customer {
 		Double getBillAmount(Double amount) {
 			Double bill = null; //edit as per the Question 
 			//write your code here if required.
+			System.out.print("Your bill amount is Rs." +amount);
+			double bal= 0.3*amount;
+			bill=amount-bal;
 			return bill;
 		}
 }
@@ -67,7 +75,12 @@ public class MediumQuestion1 {
 				Customer cust = new PrivilegeCustomer(name, address, age, phn);
 				//Double billAmt = cust.getBillAmount(purchasedAmt);
 				System.out.println("Bill details");
-				System.out.println(cust.toString()+"\n"+cust.getBillAmount(purchasedAmt));
+				
+				System.out.println(cust.toString());
+				double a= cust.getBillAmount(purchasedAmt);
+				System.out.println(" Congrats! As you are a Privileged customer, you are eligible for a discount!");
+				System.out.println("You have to pay Rs "+a);
+				
 				break;
 			case 2:
 				takeInput();
@@ -75,7 +88,10 @@ public class MediumQuestion1 {
 				
 				System.out.println("Bill details");
 				
-				System.out.println(cust1.toString()+"\n"+cust1.getBillAmount(purchasedAmt));
+				System.out.println(cust1.toString());
+				double a1= cust1.getBillAmount(purchasedAmt);
+				System.out.println(" Congrats! As you are a senior citizen, you are eligible for a discount!");
+				System.out.println("You have to pay Rs "+a1);
 				break;
 				
 			default:
